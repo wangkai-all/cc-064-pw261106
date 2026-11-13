@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>离线调研采集系统</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <span class="brand-mark">📋</span>
+        <div>
+          <strong>离线调研采集系统</strong>
+          <small>本地服务 · 离线草稿 · 冲突合并 · 表单迁移</small>
+        </div>
+      </div>
+
+      <div class="topbar-controls">
+        <div class="control-group">
+          <span class="control-label">设备</span>
+          <select id="device-select" class="select-sm">
+            <option value="A">调查设备 A</option>
+            <option value="B">调查设备 B</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <span class="control-label">表单</span>
+          <button class="btn btn-sm" data-action="download-forms">下载表单定义</button>
+        </div>
+
+        <div class="control-group net-group">
+          <span class="net-dot online" id="net-dot"></span>
+          <span class="net-text" id="net-text">在线</span>
+          <button class="btn btn-sm btn-warn" id="net-toggle">断开网络</button>
+        </div>
+
+        <div class="control-group outbox-group">
+          <button class="btn btn-sm btn-primary" data-action="sync-outbox">
+            同步发件箱<span class="outbox-badge" id="outbox-badge" style="display:none">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <nav class="tabs">
+      <button class="tab tab-active" data-tab="drafts">问卷草稿 / 离线录入</button>
+      <button class="tab" data-tab="records">采集记录查询</button>
+      <button class="tab" data-tab="scenarios">演示场景与样例数据</button>
+    </nav>
+  </header>
+
+  <main class="page" id="app"></main>
+
+  <div id="modal-root"></div>
+  <div id="toast-box" class="toast-box"></div>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

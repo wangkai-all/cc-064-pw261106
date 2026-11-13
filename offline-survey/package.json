@@ -1,0 +1,14 @@
+{
+  "name": "offline-survey",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "离线调研采集系统：离线录入、发件箱同步、字段级冲突合并、表单版本迁移",
+  "scripts": {
+    "start": "node scripts/serve.mjs 8088",
+    "test": "node --test tests/engine.test.js tests/storage.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
